@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en, ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,800;1,300&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+
+<body class="page">
+
+
+    <header class='header' style="margin-bottom: 15px;">
+        <div class="container">
+            <div class="header__top">
+                <a href="index.html" class="logo">
+                    <img src="static/images/logo.jpg" alt="" width="100" class="round">
+                </a>
+                <div class="wherehead" style="position: relative; margin-left: -850px; text-shadow: 0px 0px 7px #7b7b7b;">Sketchify</div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <img src="static/images/face.png" alt="" style="width: 60px;" class="round">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <img src="static/images/twit.jpg" alt="" style="width: 60px; border-radius: 120px">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="https://www.instagram.com/pppestto/" class="menu__link">
+                                <img src="static/images/inst.png" alt="" style="width: 60px; border-radius: 120px">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <button id="openModal">
+                                <img src="static/images/three.png" alt="" style="width: 50px;"></button>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section class="about__us">
+        <div class="info__us">
+            <div class="photo__us">
+                <img src="static/images/original_56f891a041f2ec3e4b8b456b_56f8f953de359.jpg" alt="" height="630px" width="750px">
+            </div>
+            <div class="text__about">
+                <h5 style="text-align: center; padding-top: 80px; font-size: 55px; margin: 40px; font-family: 'Merriweather', serif; font-weight: 500;">Мы - студенты ИТМО</h5>
+                <h6 style="font-size: 22px; padding-left: 90px; padding-right: 90px; margin: 10px; line-height: 40px; font-family: 'Inter Tight', sans-serif; font-weight: 500;">Мы создали Sketchify для удобной обработки фотографий. Он поможет вам сделать из своих фото разнообразные скетчи из ваших уникальных изображений.
+                </h6>
+            </div>
+        </div>
+    </section>
+
+    <div class="block__2"></div>
+    <footer class="down">
+        <div class="foot__inf" style="display: flex;">
+            <div class="foot__con" style="width: 300px;">
+                <a href="#" class="logo2">
+                    <img src="static/images/logo.jpg" alt="" style="width: 120px;" class="logo2">
+                </a>
+                <h3 class="about__h3" style="font-family: 'Merriweather', serif; font-style: italic;">Sketchify</h3>
+            </div>
+            <div class="foot__con" style="padding-left: 200px; padding-top: 40px;">
+                <h5 class="tel__num" style="font-weight: 500; margin-bottom: 10px; font-size: 20px; width: 250px; font-family: 'Merriweather', serif;">+1 (234) 567-8910</h5>
+                <h5 class="tel__num" style="font-weight: 500; margin-top: 20px; font-size: 20px; width: 250px; font-family: 'Merriweather', serif;">+1 (234) 567-8910</h5>
+            </div>
+            <div class="foot__con">
+                <h5 class="city" style="text-align: center; font-weight: 500; font-size: 18px; padding-top: 37px; margin-bottom: 0; font-family: 'Merriweather', serif;">г.Санкт-Петербург, Кронверский пр-т, 9</h5>
+                <nav class="botmenu">
+                    <ul class="botmenu__list" style="display: flex; align-items: center; gap: 0 40px; margin-top: 10px;">
+                        <li class="botnav">
+                            <a href="/" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">Главная</a>
+                        </li>
+                        <li class="botnav">
+                            <a href="/about" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">О нас</a>
+                        </li>
+                        <li class="botnav">
+                            <a href="/create" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">Редактор</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close">close</button>
+            <ul style="line-height: 30px; width: 200px; list-style-type: none; padding-left: 100px; align-items: center; margin-top: 10px;">
+                <li class="botnav">
+                    <a href="/" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Главная</a>
+                </li>
+                <li class="botnav">
+                    <a href="/about" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">О нас</a>
+                </li>
+                <li class="botnav">
+                    <a href="/create" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Редактор</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0);
+            text-decoration: none
+        }
+        
+        .modal-content {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border-right: 1px solid black;
+            font-size: 80px;
+            width: 15%;
+            height: 100%;
+            margin-right: 0%;
+        }
+        
+        .close {
+            color: #ffffff;
+            position: relative;
+            border-radius: 99px;
+            border: 1px solid #000000;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            outline: none;
+            background: #000000;
+            transition: all 0.22s;
+            cursor: pointer;
+            margin-left: 70%;
+        }
+    </style>
+
+
+
+
+    <script>
+        const modal = document.querySelector('#modal');
+        const btn = document.querySelector('#openModal');
+        const close = document.querySelector('.close');
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        close.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+
+</html>

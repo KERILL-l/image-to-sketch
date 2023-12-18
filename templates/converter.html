@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en, ru">
+
+<script>
+    function handleImageUpload() {
+
+        var image = document.getElementById("upload").files[0];
+
+        var reader = new FileReader();
+
+        reader.onload = function(e) {
+            document.getElementById("display-image").src = e.target.result;
+        }
+
+        reader.readAsDataURL(image);
+
+    } 
+</script>
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sketchify</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,300;0,400;0,800;1,300&family=Merriweather:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+</head>
+<style>
+    * {
+        box-sizing: border-box
+    }
+    
+    .mySlides {
+        display: none
+    }
+    
+    img {
+        vertical-align: middle;
+    }
+    
+    .slideshow-container {
+        max-width: 650px;
+        position: relative;
+        margin: auto;
+        right: 410px;
+        top: 50px;
+    }
+    /* Кнопки next & previous*/
+    
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+    }
+    /* Измените положение "next button" */
+    
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+    /* Добавьте черный фоновый цвет с небольшой прозрачностью*/
+    
+    .prev:hover,
+    .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+    /* Подпись под изображением */
+    
+    .text {
+        color: #ffffff;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+    }
+    /* Number text (1/3 etc) */
+    
+    .numbertext {
+        color: #ffffff;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
+    /* Точки/маркеры/указатели */
+    
+    .active,
+    .dot:hover {
+        background-color: #111111;
+    }
+    /* Выцветание анимации */
+    
+    .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+    }
+    
+    @-webkit-keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    
+    @keyframes fade {
+        from {
+            opacity: .4
+        }
+        to {
+            opacity: 1
+        }
+    }
+    /* Для маленьких экранов увеличьте размер текста */
+    
+    @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+            font-size: 11px
+        }
+    }
+</style>
+</head>
+
+<body class="page" style="height: 1000px;">
+
+    <header class='header' style="margin-bottom: 15px;">
+        <div class="container">
+            <div class="header__top">
+                <a href="index.html" class="logo">
+                    <img src="static/images/logo.jpg" alt="" width="100" class="round">
+                </a>
+                <div class="wherehead" style="position: relative; margin-left: -850px; text-shadow: 0px 0px 7px #7b7b7b;">Sketchify</div>
+                <nav class="menu">
+                    <ul class="menu__list">
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <img src="static/images/face.png" alt="" style="width: 60px;" class="round">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="#" class="menu__link">
+                                <img src="static/images/twit.jpg" alt="" style="width: 60px; border-radius: 120px">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <a href="https://www.instagram.com/pppestto/" class="menu__link">
+                                <img src="static/images/inst.png" alt="" style="width: 60px; border-radius: 120px">
+                            </a>
+                        </li>
+                        <li class="menu__item">
+                            <button id="openModal">
+                                    <img src="static/images/three.png" alt="" style="width: 50px;"></button>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+    <section class="sec__about " style="height: 800px; ">
+        <div class="slideshow-container ">
+            <div class="mySlides fade ">
+                <div class="numbertext ">1 / 3</div>
+                <img src="static/images/BE0C08CE-81A6-11EE-A1B9-16A10C854DAD.jpg " style="width: 100% ">
+                <div class="text "></div>
+            </div>
+            <div class="mySlides fade ">
+                <div class="numbertext ">2 / 3</div>
+                <img src="static/images/C709BC5D-2FDE-4772-82FD-ADA7FDDE2268.jpg " style="width: 100% ">
+                <div class="text "></div>
+            </div>
+            <div class="mySlides fade ">
+                <div class="numbertext ">3 / 3</div>
+                <img src="static/images/FBE60763-9EEF-4721-9564-0F7F1206F790.jpg " style="width: 100.9% ">
+                <div class="text "></div>
+            </div>
+            <a class="prev " onclick="plusSlides(-1) ">&#10094;</a>
+            <a class="next " onclick="plusSlides(1) ">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center ">
+            <span class="dot " onclick="currentSlide(1) "></span>
+            <span class="dot " onclick="currentSlide(2) "></span>
+            <span class="dot " onclick="currentSlide(3) "></span>
+        </div>
+
+
+    
+        <div class="box__about ">
+
+            
+
+            <h6 style="font-family: 'Inter Tight', sans-serif; text-align: center; margin-bottom: 5%; line-height: 40px; padding-top: 20%; padding-left: 25%; padding-right: 30%">
+                <p>ДОБАВЬ СВОЕ ФОТО</p>
+            </h6>
+    
+            <form method="POST" action="/create" enctype="multipart/form-data">
+                <button style="padding-left: 4%;"><img src="static/images/plus.png" alt="" class="round" style="width: 12%; ">
+                    <input class="ok" type="file" name="file">
+                </button>
+            </form>
+            <form method="GET" action="/download/{{image}}" enctype="multipart/form-data">
+                <button class="download">скачай полученное изображение</button>
+            </form>
+            
+        </div>
+
+        
+        
+
+        
+
+        </button>
+
+        <script>
+            var slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                var i;
+                var slides = document.getElementsByClassName("mySlides ");
+                var dots = document.getElementsByClassName("dot ");
+                if (n > slides.length) {
+                    slideIndex = 1
+                }
+                if (n < 1) {
+                    slideIndex = slides.length
+                }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none ";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active ", " ");
+                }
+                slides[slideIndex - 1].style.display = "block ";
+                dots[slideIndex - 1].className += " active ";
+            }
+        </script>
+    </section>
+    <div class="block__2 "></div>
+    <footer class="down">
+        <div class="foot__inf" style="display: flex;">
+            <div class="foot__con" style="width: 300px;">
+                <a href="#" class="logo2">
+                    <img src="static/images/logo.jpg" alt="" style="width: 120px;" class="logo2">
+                </a>
+                <h3 class="about__h3" style="font-family: 'Merriweather', serif; font-style: italic;">Sketchify</h3>
+            </div>
+            <div class="foot__con" style="padding-left: 200px; padding-top: 40px;">
+                <h5 class="tel__num" style="font-weight: 500; margin-bottom: 10px; font-size: 20px; width: 250px; font-family: 'Merriweather', serif;">+1 (234) 567-8910</h5>
+                <h5 class="tel__num" style="font-weight: 500; margin-top: 20px; font-size: 20px; width: 250px; font-family: 'Merriweather', serif;">+1 (234) 567-8910</h5>
+            </div>
+            <div class="foot__con">
+                <h5 class="city" style="text-align: center; font-weight: 500; font-size: 18px; padding-top: 37px; margin-bottom: 0; font-family: 'Merriweather', serif;">г.Санкт-Петербург, Кронверский пр-т, 9</h5>
+                <nav class="botmenu">
+                    <ul class="botmenu__list" style="display: flex; align-items: center; gap: 0 40px; margin-top: 10px;">
+                        <li class="botnav">
+                            <a href="/" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">Главная</a>
+                        </li>
+                        <li class="botnav">
+                            <a href="/about" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">О нас</a>
+                        </li>
+                        <li class="botnav">
+                            <a href="/create" class="botlink" style="font-size: 18px; width: 0px; text-decoration: none; font-family: 'Inter Tight', sans-serif; font-weight: 500">Редактор</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close">close</button>
+            <ul style="line-height: 30px; width: 200px; list-style-type: none; padding-left: 100px; align-items: center; margin-top: 10px;">
+                <li class="botnav">
+                    <a href="/" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Главная</a>
+                </li>
+                <li class="botnav">
+                    <a href="/about" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">О нас</a>
+                </li>
+                <li class="botnav">
+                    <a href="/create" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Редактор</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0);
+            text-decoration: none
+        }
+        
+        .modal-content {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border-right: 1px solid black;
+            font-size: 80px;
+            width: 15%;
+            height: 100%;
+            margin-right: 0%;
+        }
+        
+        .close {
+            color: #ffffff;
+            position: relative;
+            border-radius: 99px;
+            border: 1px solid #000000;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            outline: none;
+            background: #000000;
+            transition: all 0.22s;
+            cursor: pointer;
+            margin-left: 70%;
+        }
+    </style>
+
+
+
+
+    <script>
+        const modal = document.querySelector('#modal');
+        const btn = document.querySelector('#openModal');
+        const close = document.querySelector('.close');
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        close.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
+</body>
+
+</html>

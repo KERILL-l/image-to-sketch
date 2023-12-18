@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en, ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="background-color: bisque;">
+
+
+
+    <button id="openModal">Нажми меня!</button>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close">close</button>
+            <ul style="line-height: 30px; width: 100px; list-style-type: none; padding-left: 100px; align-items: center; margin-top: 10px;">
+                <li class="botnav">
+                    <a href="/" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Главная</a>
+                </li>
+                <li class="botnav">
+                    <a href="/about" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">О нас</a>
+                </li>
+                <li class="botnav">
+                    <a href="/create" class="botlink" style="font-size: 20px; width: 0px; text-decoration: none; color:#ffffff;">Редактор</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <style>
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0);
+            text-decoration: none
+        }
+        
+        .modal-content {
+            background-color: #000000;
+            color: rgb(255, 255, 255);
+            border-right: 1px solid black;
+            font-size: 80px;
+            width: 280px;
+            height: 800px;
+            margin-left: 600px;
+        }
+        
+        .close {
+            color: #ffffff;
+            position: relative;
+            border-radius: 99px;
+            border: 1px solid #000000;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            font-weight: 700;
+            outline: none;
+            background: #000000;
+            transition: all 0.22s;
+            cursor: pointer;
+            margin-left: 195px;
+        }
+    </style>
+
+
+
+
+    <script>
+        const modal = document.querySelector('#modal');
+        const btn = document.querySelector('#openModal');
+        const close = document.querySelector('.close');
+
+        btn.onclick = function() {
+            modal.style.display = 'block';
+        };
+
+        close.onclick = function() {
+            modal.style.display = 'none';
+        };
+
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+
+</html>
