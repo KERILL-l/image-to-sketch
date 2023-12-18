@@ -7,11 +7,7 @@ import numpy as np
 from PIL import Image
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///db.sqlite3'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['UPLOAD_FOLDER'] = '/home/kirill/new_img_to_scetch/static/upload'
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
-db = SQLAlchemy(app)
 
 
 def alg(filename: str):
@@ -49,10 +45,8 @@ def alg(filename: str):
     im = Image.fromarray(sketch)
     im.save(filename)
 
-class Upload(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    filename = db.Column(db.String(50))
-    data = db.Column(db.LargeBinary)
+
+
 
 @app.route('/')
 def hello():
@@ -86,12 +80,12 @@ def create():
 
 @app.route('/get_image/<image_name>')
 def get_image(image_name):
-    return send_file('/home/kirill/new_img_to_scetch/static/uploads/{image_name}', mimetype='image')
+    return send_file(os.path.join(APP_ROOT, 'static/uploads/') + image_name, mimetype='image')
 
 @app.route('/download/<upload_file>')
 def download(upload_file):
-    alg(f'/home/kirill/new_img_to_scetch/static/uploads/{upload_file}')
-    return send_file(f'/home/kirill/new_img_to_scetch/static/uploads/{upload_file}', download_name= upload_file, as_attachment=True)
+    #alg(f'/home/kirill/image_to_scetch/static/uploads/{upload_file}')
+    return send_file(os.path.join(APP_ROOT, 'static/uploads/') + upload_file, download_name= upload_file, as_attachment=True)
     
 
 if __name__ == '__main__':
