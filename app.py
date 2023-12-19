@@ -1,6 +1,5 @@
 from io import BytesIO
 from flask import Flask, render_template, send_file, request,  url_for, redirect, send_from_directory
-from flask_sqlalchemy import SQLAlchemy
 import os
 import cv2
 import numpy as np
