@@ -84,7 +84,7 @@ def get_image(image_name):
 
 @app.route('/download/<upload_file>')
 def download(upload_file):
-    #alg(f'/home/kirill/image_to_scetch/static/uploads/{upload_file}')
+    alg(os.path.join(APP_ROOT, 'static/uploads/') + upload_file)
     return send_file(os.path.join(APP_ROOT, 'static/uploads/') + upload_file, download_name= upload_file, as_attachment=True)
     
 
